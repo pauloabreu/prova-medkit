@@ -1,0 +1,1153 @@
+{
+	"info": {
+		"_postman_id": "58b5f7f5-7a03-4bb2-9c9f-6519e6111f47",
+		"name": "MedKit-Engine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9650016"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/user/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "Create Paciente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pac_data_nascimento\": \"10/02/2002\",\r\n    \"pac_nome\": \"Paulo Abreu\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/pacientes/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Pacientes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/pacientes/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Paciente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/pacientes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Paciente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pac_data_nascimento\": \"10/02/2002\",\r\n    \"pac_nome\": \"Paulo da Silva Abreu\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/pacientes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Paciente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/pacientes/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe Plano",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plan_codigo\": 2,\r\n    \"pac_codigo\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/pacientes/subscribe-plano",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"pacientes",
+								"subscribe-plano"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unsubscribe Plano",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plan_codigo\": 2,\r\n    \"pac_codigo\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/pacientes/unsubscribe-plano",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"pacientes",
+								"unsubscribe-plano"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plano de Saúde",
+			"item": [
+				{
+					"name": "Create Plano",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plano_descricao\": \"Plano Life\",\r\n    \"plano_telefone\": \"61995863021\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/planos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"planos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Planos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/planos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"planos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Plano",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/planos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Plano",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"plano_descricao\": \"Plano Life1\",\r\n    \"plano_telefone\": \"61995863021\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/planos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Plano",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/planos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"planos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "Create Consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"31/07/2024\",\r\n    \"particular\": true,\r\n    \"paciente_codigo\": 3,\r\n    //\"plano_codigo\": 2,\r\n    \"medico_codigo\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/consultas/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"consultas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Consultas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/consultas/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"consultas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/consultas/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": \"02/08/2024\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/consultas/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Consulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/consultas/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Médico",
+			"item": [
+				{
+					"name": "Create Médico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"med_nome\": \"Dr. Vinícius\",\r\n    \"med_crm\": \"123355\",\r\n    \"especialidade_codigo\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/medicos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"medicos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Médicos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/medicos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"medicos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Médico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/medicos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"medicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Médico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"med_nome\": \"Dr Paulo\",\r\n    \"med_crm\": \"619952\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/medicos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"medicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Médico",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/medicos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"medicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Especialidade",
+			"item": [
+				{
+					"name": "Create Especialidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"espec_nome\": \"Cirurgião\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/especialidades/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"especialidades",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Especialidades",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/especialidades/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"especialidades",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Especialidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/especialidades/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"especialidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Especialidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"espec_nome\": \"Python\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/especialidades/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"especialidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Especialidade",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/especialidades/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"especialidades",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Procedimento",
+			"item": [
+				{
+					"name": "Create Procedimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proc_nome\": \"Raio X\",\r\n    \"proc_valor\": 99.90\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/procedimentos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"procedimentos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Procedimentos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/procedimentos/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"procedimentos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Procedimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/procedimentos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"procedimentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Procedimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"proc_nome\": \"Raio Y\",\r\n    \"proc_valor\": 10.99\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/medkit/procedimentos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"procedimentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Procedimento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/medkit/procedimentos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"medkit",
+								"procedimentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:777",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3OCIsImV4cCI6MTcyNDQ2MzcyOX0.KOu_SB8YSzAuRfRoHF9AXY6igNKyRGH07Uucbgdwc3A",
+			"type": "string"
+		}
+	]
+}

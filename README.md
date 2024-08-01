@@ -47,4 +47,4 @@ flake8 --max-line-length=119 .
 Acesse a doc do swagger em http://localhost:777/docs
 
 Ou baixe o json exportado do POSTMAN:
-https://raw.githubusercontent.com/pauloabreu/prova-medkit/postman.json
+https://raw.githubusercontent.com/pauloabreu/prova-medkit/main/postman.json
